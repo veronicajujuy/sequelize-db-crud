@@ -6,12 +6,12 @@
     <title>Document</title>
   </head>
   <body>
-    <% console.log(movies) %>
     <h1>Movies</h1>
     <ul>
       <% movies.map(movie => { %>
       <li><a href="/movies/<%= movie.id %>"><%= movie.title %></a></li>
       <% }) %>
     </ul>
+    <a href="/movies/create"><button>Crear</button></a>
   </body>
 </html>

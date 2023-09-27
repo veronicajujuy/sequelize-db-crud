@@ -10,5 +10,9 @@
     <p>Title:<%= movie.title %></p>
     <p>Rating: <%= movie.rating %></p>
     <p>Release Date:<%= movie.release_date %></p>
+    <a href="/movies/edit/<%= movie.id %>"><button>Edit</button></a>
+    <form action="/movies/delete/<%= movie.id %>" method="post">
+      <button type="submit">Eliminar</button>
+    </form>
   </body>
 </html>
