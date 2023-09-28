@@ -183,3 +183,50 @@ db.Movie.findByPk(12, { raw: true })
   .then((result) => console.log(result))
   .catch((error) => console.log(error));
 ```
+
+# CREATE UPDATE DELETE
+
+Para la creación, modificación y borrado de registros podremos utilizar diversos metodos de sequelize:
+
+## Create
+
+```js
+db.Movie.create({
+  title: "Barbie",
+  rating: 9.5,
+  awards: 0,
+  release_date: "2023-08-25",
+})
+  .then((result) => console.log(result))
+  .catch((error) => console.log(error));
+```
+
+## Update
+
+```js
+db.Movie.update(
+  {
+    title: "Barbie: the movie",
+    rating: "9.8",
+  },
+  {
+    where: {
+      id: 22,
+    },
+  }
+)
+  .then((result) => console.log(result))
+  .catch((error) => console.log(error));
+```
+
+## Borrado
+
+```js
+db.Movie.destroy({
+  where: {
+    id: 22,
+  },
+})
+  .then((result) => console.log(result))
+  .catch((error) => console.log(error));
+```
